@@ -54,7 +54,7 @@ document.addEventListener('click',function(e){
     h+='<article class="song is-funding"><div class="song-top"><span class="pill">fund open</span></div><h3>'+f.label+'</h3>'+(f.note?'<p>'+f.note+'</p>':'')+
       '<div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="'+f.goal+'" aria-valuenow="'+f.raised+'" aria-label="'+f.label+'"><span style="width:'+pct+'%"></span></div>'+
       '<div class="bar-meta"><b>'+money(f.raised)+'</b> raised of '+money(f.goal)+'<span>'+pct+'%</span></div>'+
-      '<div class="btns"><a class="btn solid" href="'+d.supportUrl+'" target="_blank" rel="noopener">Chip in for the next song</a><a class="btn" href="#vote">Vote on which song</a></div></article>';}
+      '<div class="btns"><a class="btn solid" href="'+d.supportUrl+'" target="_blank" rel="noopener">Chip in to the studio fund</a><a class="btn" href="#vote">Vote on the songs</a></div></article>';}
   h+='<div class="song-grid">'+d.songs.map(function(s){
     return '<article class="song small-card'+(s.status==='vote'?' is-vote':'')+'"><div class="song-top"><span class="pill">'+(label[s.status]||s.status)+'</span></div>'+
       '<h3>'+s.title+(s.alt?' <span class="alt">or <i>'+s.alt+'</i>?</span>':'')+'</h3>'+(s.note?'<p>'+s.note+'</p>':'')+'</article>';
