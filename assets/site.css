@@ -328,3 +328,8 @@ footer{font-size:16px}
 .is-vote .pill{border-color:var(--rose);color:var(--rose)}
 .vote{max-width:820px;margin-top:64px}
 .vote .tally{height:560px}
+
+.song-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.song.small-card{padding:22px 24px}
+.song.small-card h3{font-size:clamp(28px,3.4vw,36px)}
+@media (max-width:640px){.song-grid{grid-template-columns:1fr}}
