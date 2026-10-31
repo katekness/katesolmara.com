@@ -47,10 +47,10 @@ document.addEventListener('click',function(e){
 // Song log
 (function(){
   var el=document.getElementById('songs'),d=window.SONGLOG;if(!el||!d)return;
-  var label={funding:'recording fund open',ready:'written · ready to record',recorded:'recorded · coming soon',released:'out now'};
+  var label={funding:'recording fund open',vote:'in the vote · you choose',ready:'written · ready to record',recorded:'recorded · coming soon',released:'out now'};
   function money(n){return '$'+Number(n).toLocaleString('en-US')}
   el.innerHTML=d.songs.map(function(s,i){
-    var h='<article class="song'+(s.status==='funding'?' is-funding':'')+'">'+
+    var h='<article class="song'+(s.status==='funding'?' is-funding':'')+(s.status==='vote'?' is-vote':'')+'">'+
       '<div class="song-top"><span class="song-n">'+String(i+1).padStart(2,'0')+'</span><span class="pill">'+(label[s.status]||s.status)+'</span></div>'+
       '<h3>'+s.title+(s.alt?' <span class="alt">or <i>'+s.alt+'</i>?</span>':'')+'</h3>'+
       (s.note?'<p>'+s.note+'</p>':'');
@@ -60,7 +60,7 @@ document.addEventListener('click',function(e){
          '<div class="bar-meta"><b>'+money(s.raised)+'</b> raised of '+money(s.goal)+'<span>'+pct+'%</span></div>'+
          '<a class="btn solid" href="'+d.supportUrl+'" target="_blank" rel="noopener">Help fund &ldquo;'+s.title+'&rdquo;</a>';
     }
-    if(s.alt)h+='<a class="textlink" style="align-self:flex-start" href="https://www.instagram.com/katesolmara" target="_blank" rel="noopener">Vote on Instagram &rarr;</a>';
+    if(s.status==='vote'||s.alt)h+='<a class="textlink" style="align-self:flex-start" href="#vote">Vote below &rarr;</a>';
     return h+'</article>';
   }).join('')+'<p class="updated">Last updated '+d.updated+'</p>';
 })();
