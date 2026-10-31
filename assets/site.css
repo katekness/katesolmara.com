@@ -333,3 +333,9 @@ footer{font-size:16px}
 .song.small-card{padding:22px 24px}
 .song.small-card h3{font-size:clamp(28px,3.4vw,36px)}
 @media (max-width:640px){.song-grid{grid-template-columns:1fr}}
+
+/* reach strip */
+.reach{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:12px 40px;margin-top:34px;padding-top:28px;border-top:1px solid var(--cream-faint)}
+.reach strong{display:block;font-family:var(--display);font-weight:400;font-size:48px;line-height:1;color:var(--cream);font-variant-numeric:tabular-nums}
+.reach span{font-size:15px;color:var(--cream-dim);letter-spacing:.04em}
+@media (max-width:560px){.reach{grid-template-columns:repeat(2,auto)}}
