@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /songlog/
+
+Sitemap: https://katesolmara.com/sitemap.xml
